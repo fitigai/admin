@@ -1,21 +1,43 @@
 import React from "react";
+import { render } from "react-dom";
+
+  const layout = {
+    textAlign:"center",
+    padding:"50px",
+    margin:"25px"
+  };
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      
       </header>
+    <body> 
+   
+    <div className="container">
+      <div style={layout} className="item"> 
+      <div><h1>Admin</h1></div>
+    <form>
+    <label>
+        Username:
+        <input type="text" name="name" />
+      </label>
+      <label>
+        Password:
+        <input type="text" name="password" />
+      </label>
+      
+      <input type="submit" value="Submit" />
+    </form>
+    </div>
+    </div>
+
+    </body>
+
+    
+      
     </div>
   );
 }
