@@ -1,45 +1,26 @@
-import React from "react";
-import { render } from "react-dom";
+import React, { Component } from "react"
 
-  const layout = {
-    textAlign:"center",
-    padding:"50px",
-    margin:"25px"
-  };
 
-function App() {
+import Coach from "./components/coach"
+import CoachList from "./components/coach_list"
 
-  return (
-    <div className="App">
-      <header className="App-header">
-      
-      </header>
-    <body> 
-   
-    <div className="container">
-      <div style={layout} className="item"> 
-      <div><h1>Admin</h1></div>
-    <form>
-    <label>
-        Username:
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Password:
-        <input type="text" name="password" />
-      </label>
-      
-      <input type="submit" value="Submit" />
-    </form>
-    </div>
-    </div>
 
-    </body>
+class App extends Component {
+    constructor(props)  {
+    super(props)
+    }
 
-    
-      
-    </div>
-  );
+    render() {
+        return(
+            <div>
+                <div>
+                    <div>All Coach</div>
+                    <div><CoachList /></div>
+                </div>
+               
+            </div>
+        )
+    }
 }
 
 export default App;
