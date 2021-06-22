@@ -1,8 +1,8 @@
 /** ------- COLORS ------- **/
-$primary: #ff7600;
-$secondary: #000000;
-
-$contact: #f9813a;
+$primary: #293B5F;
+$secondary: #B2AB8C;
+$accent: #47597E;
+$secondary-aceent: #DBE6FD;
 
 $danger: #d50000;
 $success: #00c853;
@@ -20,9 +20,9 @@ $hover: lighten($primary, 20%) !default;
 
 /** ------- FONT ------- **/
 
-$family: "Nunito", "Helvetica", "Arial", sans-serif;
-$heading: "Nunito", "Helvetica", "Arial", sans-serif;
-$sans-serif: "Helvetica", "Arial", sans-serif;
+$family: "Poppins", "Helvetica", "Arial", sans-serif;
+$heading: "Poppins", "Helvetica", "Arial", sans-serif;
+$sans-serif: "Poppins", "Arial", sans-serif;
 $font-size-base: 14px !default;
 $light: 300;
 $regular: 400;

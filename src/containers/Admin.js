@@ -1,10 +1,14 @@
 import React from 'react'
+import Container from "../components/Container"
+import Aside from "./Aside"
 
 export const Admin = (props) => {
   return(
-    <div>
-      <h1>Admin page</h1>
-    </div>
+      <Container wide={false} transition={true}>
+        <Aside></Aside>
+        <section>Blabla</section>
+      </Container>
+    
   )
 }
 

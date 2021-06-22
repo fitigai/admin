@@ -21,16 +21,6 @@ main {
   overflow-y: scroll;
 }
 
-@include medium-down {
-  main {
-    position: sticky;
-  }
-}
-
-section {
-  min-height: 100%;
-}
-
 %padding-for-container {
   padding: 5rem 0;
   @include medium-down {

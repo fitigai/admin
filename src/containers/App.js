@@ -1,9 +1,7 @@
 import React, { Component } from "react"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-// import { toggleAside } from "../actions/asideActions"
 import Admin from "./Admin"
 import Navbar from "../components/Navbar"
-import { CSSTransition, TransitionGroup } from "react-transition-group"
 
 class App extends Component {
   render() {
@@ -15,13 +13,9 @@ class App extends Component {
 
           <Route
             render={({ location }) => (
-              <TransitionGroup>
-                <CSSTransition key={location.key} timeout={450} classNames="fade">
                   <Switch location={location}>
                     <Route exact path="/" component={Admin} />
                   </Switch>
-                </CSSTransition>
-              </TransitionGroup>
             )}
           />
         </BrowserRouter>

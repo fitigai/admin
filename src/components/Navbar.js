@@ -8,14 +8,14 @@ export const Navbar = props => {
 
 
   return (
-    <div className="navbar--header">
+    <header className="navbar--header">
       {/* LOGO SITE */}
       <span className="navbar--logo">
         <Link to="/">
           <Logo />
         </Link>
       </span>
-    </div>
+    </header>
   )
 }
 

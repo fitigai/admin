@@ -4,10 +4,18 @@
 @import "libs/helpers";
 @import "libs/grid";
 @import "libs/base";
+@import "libs/fonts";
 
 
-.app__aside{
-  background-color: red;
-  width: 100%;
-  height: 20px;
+@import "../containers/Admin";
+@import "../containers/App";
+@import "../containers/Footer";
+
+@import "../components/Container";
+@import "../components/Navbar";
+
+.admin__aside{
+  background-color: $primary;
+  width: 300px;
+  height: 100%;
 }
