@@ -2,6 +2,7 @@ import React from 'react'
 import Container from "../components/Container"
 import Aside from "./Aside"
 import axios from 'axios';
+import { Avatar, EditIcon, PlusIcon } from 'evergreen-ui'
 
 class Admin extends React.Component {
   constructor(props){
@@ -14,17 +15,15 @@ class Admin extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/users')
+    axios.get('users.json')
       .then(
         (result) => {
+          console.log(result.data)
           this.setState({
             isLoaded: true,
-            items: result.data
+            items: result.data.slice(0, 20)
           });
         },
-        // Remarque : il est important de traiter les erreurs ici
-        // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
-        // des exceptions provenant de réels bugs du composant.
         (error) => {
           console.log(error)
           this.setState({
@@ -34,6 +33,11 @@ class Admin extends React.Component {
         }
       )
   }
+
+  cell = content =>
+    <td style={{textAlign: 'center'}}>
+      {content}
+    </td>
 
   render() {
     const { error, isLoaded, items } = this.state;
@@ -47,13 +51,30 @@ class Admin extends React.Component {
       <Container wide={false} transition={true}>
         <Aside></Aside>
         <section className="section--primary">
-          <ul>
-          {items.map(item => (
-            <li key={item.name}>
-              {item.name}
-            </li>
-          ))}
-        </ul>
+            <div className="section-container">
+              <div className="table-container">
+                <table>
+                  <tr>
+                    <th>Gravatar</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Status</th>
+                    <th>Conatct</th>
+                    <th>Edite</th>
+                  </tr>
+                      {items.map(item => (
+                        <tr key={item.id}>
+                            {this.cell(<Avatar name="Jeroen Ransijn" size={40} />)}
+                            {this.cell(item.firstName)}
+                            {this.cell(item.lastName)}
+                            {this.cell(item.isCoach ? "isCoach" : "isStudent")}
+                            {this.cell(<PlusIcon />)}
+                            {this.cell(<EditIcon />)}
+                          </tr>
+                      ))}
+                </table>
+              </div>
+          </div>
         </section>
       </Container>
       )}
