@@ -2,13 +2,10 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../icons/logos/Logo"
 import MobileAside from "../containers/MobileAside"
-import { Popover, Position, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon,TrashIcon ,SearchIcon , Button, MenuIcon, LogOutIcon, SelectMenu } from 'evergreen-ui'
-
-
+import { Popover, Position, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon , Button, MenuIcon, LogOutIcon, SearchInput } from 'evergreen-ui'
 
 export const Navbar = props => {
 
-  const [selected, setSelected] = React.useState(null)
   return (
     <header className="navbar--header">
       {/* LOGO SITE */}
@@ -17,15 +14,7 @@ export const Navbar = props => {
           <Logo />
         </Link>
       </span>
-      <SelectMenu
-                  title="Select name"
-                  options={['Apple', 'Apricot', 'Banana', 'Cherry', 'Cucumber'].map((label) => ({ label, value: label }))}
-                  position={Position.TOP}
-                  selected={selected}
-                  onSelect={(item) => setSelected(item.value)}
-                >
-                  <Button marginY={15} marginRight={16} iconAfter={SearchIcon}>{selected || 'Select name...'}</Button>
-                </SelectMenu>
+      <SearchInput marginY={15} marginRight={16} placeholder="Filter traits..." />
       <Popover
         position={Position.BOTTOM_RIGHT}
         content={

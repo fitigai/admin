@@ -1,7 +1,9 @@
 import React from 'react'
 import Container from "../components/Container"
 import axios from 'axios';
-import { Avatar, EditIcon, PlusIcon } from 'evergreen-ui'
+import { Avatar, EditIcon, TrashIcon, Button } from 'evergreen-ui'
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 class Admin extends React.Component {
   constructor(props){
@@ -52,24 +54,30 @@ class Admin extends React.Component {
             <div className="section-container">
               <div className="table-container">
                 <table>
+                  <thead>
                   <tr>
                     <th>Gravatar</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
+                    <th>Created at</th>
+                    <th>Full name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
                     <th>Status</th>
-                    <th>Conatct</th>
-                    <th>Edite</th>
+                    <th>Actions</th>
                   </tr>
-                      {items.map(item => (
-                        <tr key={item.id}>
+                  </thead>
+                  <tbody>
+                    {items.map(item => (
+                        <tr key={item._id}>
                             {this.cell(<Avatar name="Jeroen Ransijn" size={40} />)}
-                            {this.cell(item.firstName)}
-                            {this.cell(item.lastName)}
+                            {this.cell(<Moment format="YYYY/MM/DD" date={item.createdAt} />)}
+                            {this.cell(<div>{item.firstName} {item.lastName}</div>)}
+                            {this.cell(<a href={"mailto:" + item.email}>{item.email}</a>)}
+                            {this.cell(item.phone)}
                             {this.cell(item.isCoach ? "isCoach" : "isStudent")}
-                            {this.cell(<PlusIcon />)}
-                            {this.cell(<EditIcon />)}
+                          {this.cell(<div><Button marginRight={5} appearance="minimal"><EditIcon/></Button><Button marginRight={5} appearance="minimal"><TrashIcon /></Button></div>)}
                           </tr>
                       ))}
+                    </tbody>
                 </table>
               </div>
           </div>
