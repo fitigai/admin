@@ -1,13 +1,14 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../icons/logos/Logo"
-import { Popover, Position, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon, TrashIcon, Button } from 'evergreen-ui'
+import MobileAside from "../containers/MobileAside"
+import { Popover, Position, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon,TrashIcon ,SearchIcon , Button, MenuIcon, LogOutIcon, SelectMenu } from 'evergreen-ui'
 
 
 
 export const Navbar = props => {
 
-
+  const [selected, setSelected] = React.useState(null)
   return (
     <header className="navbar--header">
       {/* LOGO SITE */}
@@ -16,15 +17,22 @@ export const Navbar = props => {
           <Logo />
         </Link>
       </span>
-       <Button marginRight={16} intent="none">
-        Logout
-      </Button>
+      <SelectMenu
+                  title="Select name"
+                  options={['Apple', 'Apricot', 'Banana', 'Cherry', 'Cucumber'].map((label) => ({ label, value: label }))}
+                  position={Position.TOP}
+                  selected={selected}
+                  onSelect={(item) => setSelected(item.value)}
+                >
+                  <Button marginY={15} marginRight={16} iconAfter={SearchIcon}>{selected || 'Select name...'}</Button>
+                </SelectMenu>
       <Popover
-        // position={Position.BOTTOM_LEFT}
+        position={Position.BOTTOM_RIGHT}
         content={
           <Menu>
+            <Menu.Divider />
             <Menu.Group>
-              <Menu.Item disabled icon={PeopleIcon}>
+              <Menu.Item icon={PeopleIcon}>
                 Share...
               </Menu.Item>
               <Menu.Item icon={CircleArrowRightIcon}>Move...</Menu.Item>
@@ -34,15 +42,16 @@ export const Navbar = props => {
             </Menu.Group>
             <Menu.Divider />
             <Menu.Group>
-              <Menu.Item disabled icon={TrashIcon} intent="danger">
-                Delete...
+              <Menu.Item icon={LogOutIcon}>
+                Logout
               </Menu.Item>
             </Menu.Group>
           </Menu>
         }
       >
-        <Button marginRight={16}>With Disabled Items</Button>
+        <Button marginY={15} marginRight={16} iconAfter={MenuIcon}>Menu</Button>
       </Popover>
+      <MobileAside></MobileAside>
     </header>
   )
 }

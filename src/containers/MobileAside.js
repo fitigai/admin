@@ -1,7 +1,7 @@
 import React from "react"
-import { Avatar, SideSheet, Paragraph, Button } from 'evergreen-ui'
+import { Avatar, SideSheet, Paragraph, Button, CogIcon } from 'evergreen-ui'
 
-function Aside() {
+function MobileAside() {
   const [isShown, setIsShown] = React.useState(false)
   return (
     <>
@@ -13,9 +13,9 @@ function Aside() {
           />
         <Paragraph margin={40}>Basic Example</Paragraph>
       </SideSheet>
-      <Button onClick={() => setIsShown(true)}>Show Basic Side Sheet</Button>
+      <Button onClick={() => setIsShown(true)} marginY={15} iconAfter={CogIcon} marginRight={16}>Settings</Button>
     </>
   )
 }
 
-export default Aside
+export default MobileAside

@@ -1,6 +1,5 @@
 import React from 'react'
 import Container from "../components/Container"
-import Aside from "./Aside"
 import axios from 'axios';
 import { Avatar, EditIcon, PlusIcon } from 'evergreen-ui'
 
@@ -49,7 +48,6 @@ class Admin extends React.Component {
     } else {
       return (
       <Container wide={false} transition={true}>
-        <Aside></Aside>
         <section className="section--primary">
             <div className="section-container">
               <div className="table-container">

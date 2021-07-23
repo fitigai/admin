@@ -15,8 +15,8 @@
 
 main {
   position: relative;
-  display: grid;
-  grid-template-columns: 200px 1fr;
+  // display: grid;
+  // grid-template-columns: 200px 1fr;
   height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -44,12 +44,12 @@ main {
   width: 100%;
   margin: 0 auto;
   min-height: 100%;
-  @include medium {
-    width: calc(100% - 1rem);
-  }
-  @include large {
-    width: calc(100% - 10rem);
-  }
+  // @include medium {
+  //   width: calc(100% - 1rem);
+  // }
+  // @include large {
+  //   width: calc(100% - 10rem);
+  // }
 }
 
 .container--small {

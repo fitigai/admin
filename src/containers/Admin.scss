@@ -1,13 +1,13 @@
-.section--primary{
+.section--primary {
   background-color: $gray-light;
   padding: 2rem;
 }
 
-.section-container{
+.section-container {
   background-color: $white;
 }
 
-.table-container{
+.table-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -15,6 +15,31 @@
   align-content: stretch;
 }
 
-.table-col{
+
+.table-container {
+  table {
+    width: 100%;
+  }
+
+  tr{
+    border-bottom: 1px solid $gray-light;
+  }
+
+  th {
+    text-align: center;
+    height: 50px;
+    background-color: $primary;
+    color: $white;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+
+
+
+.table-col {
   width: calc(100% / 5);
 }
