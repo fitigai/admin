@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../icons/logos/Logo"
 import MobileAside from "../containers/MobileAside"
-import { Popover, Position, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon , Button, MenuIcon, LogOutIcon, SearchInput } from 'evergreen-ui'
+import { Popover, Position, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon , Button, MenuIcon, LogOutIcon } from 'evergreen-ui'
 
 export const Navbar = props => {
 
@@ -14,7 +14,6 @@ export const Navbar = props => {
           <Logo />
         </Link>
       </span>
-      <SearchInput marginY={15} marginRight={16} placeholder="Filter traits..." />
       <Popover
         position={Position.BOTTOM_RIGHT}
         content={

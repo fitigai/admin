@@ -2,9 +2,9 @@ import React from "react"
 
 function Container(props) {
   return (
-    <div className={props.transition ? "transition-container" : ""}>
-        <main>{props.children}</main>
-    </div>
+    <main className={props.transition ? "transition-container" : ""}>
+       {props.children}
+    </main>
   )
 }
 

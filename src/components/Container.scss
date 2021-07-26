@@ -1,26 +1,14 @@
 .transition-container {
-  // background: url(../../img/background.svg) fixed center center no-repeat;
   position: relative;
   width: 100%;
   height: calc(100% - #{$header-top});
-  overflow: hidden;
-  & > div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 }
 
 main {
   position: relative;
-  // display: grid;
-  // grid-template-columns: 200px 1fr;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
+
 }
 
 %padding-for-container {

@@ -1,9 +1,10 @@
 import React from 'react'
 import Container from "../components/Container"
+import Edit from "../components/Edit"
+import Trash from "../components/Trash"
 import axios from 'axios';
-import { Avatar, EditIcon, TrashIcon, Button } from 'evergreen-ui'
-import Moment from 'react-moment';
-import 'moment-timezone';
+import { Avatar, Pagination, Table } from 'evergreen-ui'
+import moment from 'moment'
 
 class Admin extends React.Component {
   constructor(props){
@@ -11,7 +12,8 @@ class Admin extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      isShown: false
     };
   }
 
@@ -35,11 +37,6 @@ class Admin extends React.Component {
       )
   }
 
-  cell = content =>
-    <td style={{textAlign: 'center'}}>
-      {content}
-    </td>
-
   render() {
     const { error, isLoaded, items } = this.state;
     console.log(items)
@@ -53,34 +50,40 @@ class Admin extends React.Component {
         <section className="section--primary">
             <div className="section-container">
               <div className="table-container">
-                <table>
-                  <thead>
-                  <tr>
-                    <th>Gravatar</th>
-                    <th>Created at</th>
-                    <th>Full name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                    {items.map(item => (
-                        <tr key={item._id}>
-                            {this.cell(<Avatar name="Jeroen Ransijn" size={40} />)}
-                            {this.cell(<Moment format="YYYY/MM/DD" date={item.createdAt} />)}
-                            {this.cell(<div>{item.firstName} {item.lastName}</div>)}
-                            {this.cell(<a href={"mailto:" + item.email}>{item.email}</a>)}
-                            {this.cell(item.phone)}
-                            {this.cell(item.isCoach ? "isCoach" : "isStudent")}
-                          {this.cell(<div><Button marginRight={5} appearance="minimal"><EditIcon/></Button><Button marginRight={5} appearance="minimal"><TrashIcon /></Button></div>)}
-                          </tr>
-                      ))}
-                    </tbody>
-                </table>
+                <Table>
+                <Table.Head>
+                  <Table.SearchHeaderCell />
+                  <Table.TextHeaderCell>Gravatar</Table.TextHeaderCell>
+                  <Table.TextHeaderCell>Created at</Table.TextHeaderCell>
+                  <Table.TextHeaderCell>Full name</Table.TextHeaderCell>
+                  <Table.TextHeaderCell>Email</Table.TextHeaderCell>
+                  <Table.TextHeaderCell>Phone</Table.TextHeaderCell>
+                  <Table.TextHeaderCell>Status</Table.TextHeaderCell>
+                  <Table.TextHeaderCell>Actions</Table.TextHeaderCell>
+                </Table.Head>
+                <Table.VirtualBody height={500}>
+                  {items.map((item) => (
+                    <Table.Row key={item._id}>
+                      <Table.TextCell></Table.TextCell>
+                      <Table.TextCell><Avatar name="Jeroen Ransijn" size={40} /></Table.TextCell>
+                      <Table.TextCell>{moment(item.createdAt).format('MMMM Do YYYY')}</Table.TextCell>
+                      <Table.TextCell>{item.firstName} {item.lastName}</Table.TextCell>
+                      <Table.TextCell><a href={"mailto:" + item.email}>{item.email}</a></Table.TextCell>
+                      <Table.TextCell isNumber>{item.phone}</Table.TextCell>
+                      <Table.TextCell>{item.isCoach ? "isCoach" : "isStudent"}</Table.TextCell>
+                      <Table.TextCell>
+                        <div>
+                          <Edit />
+                          <Trash />
+                        </div>
+                      </Table.TextCell>
+                    </Table.Row>
+                  ))}
+                </Table.VirtualBody>
+                </Table>
+                <Pagination page={1} totalPages={5} className="table-pagination"></Pagination> 
               </div>
-          </div>
+            </div>
         </section>
       </Container>
       )}
