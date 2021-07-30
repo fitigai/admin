@@ -2,8 +2,9 @@ import React from 'react'
 import Container from "../components/Container"
 import Edit from "../components/Edit"
 import Trash from "../components/Trash"
+import Aside from "./Aside"
 import axios from 'axios';
-import { Avatar, Pagination, Table } from 'evergreen-ui'
+import { Avatar, Pagination, Table, Spinner, Pane } from 'evergreen-ui'
 import moment from 'moment'
 
 class Admin extends React.Component {
@@ -43,10 +44,13 @@ class Admin extends React.Component {
     if (error) {
       return <div>Erreur : {error.message}</div>;
     } else if (!isLoaded) {
-      return <div>Chargement…</div>;
+      return <Pane display="flex" alignItems="center" justifyContent="center" height={400}>
+        <Spinner />
+      </Pane>;
     } else {
       return (
-      <Container wide={false} transition={true}>
+        <Container wide={false} transition={true}>
+          <Aside />
         <section className="section--primary">
             <div className="section-container">
               <div className="table-container">

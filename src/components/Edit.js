@@ -1,11 +1,11 @@
 import React from "react"
-import { EditIcon, Button, Pane, Dialog } from 'evergreen-ui'
+import { Tooltip, IconButton, EditIcon, Button, Pane, Dialog } from 'evergreen-ui'
 
 
 function Edit() {
   const [isShown, setIsShown] = React.useState(false)
   return (
-   <Pane>
+      <Pane>
       <Dialog
         isShown={isShown}
         title="Dialog title"
@@ -15,8 +15,11 @@ function Edit() {
       >
         Are you sure you want to delete this item?
       </Dialog>
-
-      <Button marginRight={5} appearance="minimal" onClick={() => setIsShown(true)}><EditIcon /></Button>
+      <div onClick={() => setIsShown(true)}>
+        <Tooltip marginRight={5} content="Edit title">
+          <IconButton icon={EditIcon} />
+        </Tooltip>
+      </div>
     </Pane>
   )
 }

@@ -5,7 +5,7 @@ function MobileAside() {
   const [isShown, setIsShown] = React.useState(false)
   return (
 
-    <div>
+    <div className="hidden-large">
       <SideSheet isShown={isShown} onCloseComplete={() => setIsShown(false)}>
         <Avatar
             src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg"

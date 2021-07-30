@@ -1,7 +1,18 @@
 .section--primary {
+  position: relative;
   background-color: $gray-light;
   padding: 2rem;
   height: 100%;
+  width: 100%;
+
+  @include medium-up{
+    position: absolute;
+  top: 0;
+  left: 15%;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  }
 }
 
 .section-container {

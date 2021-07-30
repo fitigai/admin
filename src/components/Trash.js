@@ -1,5 +1,5 @@
 import React from "react"
-import { TrashIcon, Button, Pane, Dialog } from 'evergreen-ui'
+import { Tooltip, IconButton, TrashIcon, Button, Pane, Dialog } from 'evergreen-ui'
 
 function Trash() {
   const [isShown, setIsShown] = React.useState(false)
@@ -13,8 +13,11 @@ function Trash() {
       >
         Dialog content
       </Dialog>
-
-      <Button marginRight={5} appearance="minimal" onClick={() => setIsShown(true)}><TrashIcon /></Button>
+      <div onClick={() => setIsShown(true)}>
+        <Tooltip marginRight={5} content="Trash title">
+          <IconButton icon={TrashIcon} />
+        </Tooltip>
+      </div>
     </Pane>
   )
 }

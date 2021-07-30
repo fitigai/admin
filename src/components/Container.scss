@@ -1,15 +1,15 @@
 .transition-container {
   position: relative;
-  width: 100%;
   height: calc(100% - #{$header-top});
+  width: 100%;
 }
 
 main {
   position: relative;
   height: 100%;
   width: 100%;
-
 }
+
 
 %padding-for-container {
   padding: 5rem 0;
