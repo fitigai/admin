@@ -24,3 +24,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.table-action{
+  display: block;
+    float: left;
+    margin: 5px;
+}
+
+.reset-float{
+  @include clearfix;
+}

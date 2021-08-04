@@ -1,5 +1,5 @@
 import React from "react"
-import { Tooltip, IconButton, EditIcon, Button, Pane, Dialog } from 'evergreen-ui'
+import { Tooltip, IconButton, EditIcon, Pane, Dialog } from 'evergreen-ui'
 
 
 function Edit() {
@@ -15,7 +15,7 @@ function Edit() {
       >
         Are you sure you want to delete this item?
       </Dialog>
-      <div onClick={() => setIsShown(true)}>
+      <div onClick={() => setIsShown(true)} className="table-action">
         <Tooltip marginRight={5} content="Edit title">
           <IconButton icon={EditIcon} />
         </Tooltip>

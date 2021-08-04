@@ -1,7 +1,9 @@
 import React, { Component } from "react"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Admin from "./Admin"
+import HomeGuest from "./HomeGuest"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 class App extends Component {
   render() {
@@ -10,11 +12,13 @@ class App extends Component {
           <Navbar />
           <Route
             render={({ location }) => (
-                  <Switch location={location}>
-                    <Route exact path="/" component={Admin} />
-                  </Switch>
+            <Switch location={location}>
+                <Route exact path="/homeguest" component={HomeGuest} />
+                <Route path="/" component={Admin} />
+            </Switch>
             )}
-          />
+        />
+        <Footer />
         </BrowserRouter>
     )
   }

@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import { Avatar, Paragraph, Pane, Tablist, SidebarTab } from 'evergreen-ui'
+import { Avatar, Pane, Tablist, SidebarTab } from 'evergreen-ui'
 
 
 function Aside() {

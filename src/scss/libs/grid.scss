@@ -1,5 +1,15 @@
+
+
 /** ------- GRID ------- **/
 $columns: 12;
+
+.container-narrow {
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - 1rem);
+  max-width: 80rem;
+  height: 100%;
+}
 
 .row-center {
   @include flex;
@@ -7,6 +17,7 @@ $columns: 12;
   justify-content: center;
   @include align-center;
   width: 100%;
+  height: 100%;
   > * {
     position: relative;
   }
