@@ -9,13 +9,14 @@
 
 @import "../containers/Admin";
 @import "../containers/App";
-@import "../containers/Footer";
+
 @import "../containers/MobileAside";
 @import "../containers/Aside";
 @import "../containers/HomeGuest";
 
 @import "../components/Container";
 @import "../components/Navbar";
+@import "../components/Footer";
 
 .admin__aside{
   background-color: $primary;

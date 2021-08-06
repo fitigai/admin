@@ -1,10 +1,10 @@
-import React from "react"
-import Container from "../components/Container"
+import React, {useEffect} from "react"
+import Page from "../components/Page"
 import {TextInputField, Button} from 'evergreen-ui'
 
 function HomeGuest() {
   return (
-    <Container wide={true} >
+    <Page wide={true} title="Welcome">
         <div className="row-center">
           <div className="col-lg-7 content-narrow">
             <h1>Welcome Folks !</h1>
@@ -28,7 +28,7 @@ function HomeGuest() {
           </Button>
           </div>
         </div>
-    </Container>
+    </Page>
   )
 }
 

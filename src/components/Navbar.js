@@ -31,7 +31,7 @@ export const Navbar = props => {
             <Menu.Divider />
             <Menu.Group>
               <Menu.Item icon={LogOutIcon}>
-                Logout
+                <Link to="/">Logout </Link>
               </Menu.Item>
             </Menu.Group>
           </Menu>

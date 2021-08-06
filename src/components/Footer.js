@@ -1,17 +1,20 @@
 import React, { useState } from "react"
-import {TabNavigation, Tab} from 'evergreen-ui'
+import { TabNavigation, Tab } from 'evergreen-ui'
+import { Link } from "react-router-dom"
 
 function Footer() {
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const [tabs] =useState(['Traits', 'Event History', 'Identities'])
   return (
-    <footer>
-      <TabNavigation>
-        {['Traits', 'Event History', 'Identities'].map((tab, index) => (
-          <Tab key={tab} is="a" href="#" id={tab} isSelected={index === 0}>
-            {tab}
+    <footer className="footer">
+      <TabNavigation marginBottom={16}>
+          <Tab>
+            <Link to="/">Home</Link>
+        </Tab>
+        <Tab>
+            <Link to="/about">About-us</Link>
+        </Tab>
+        <Tab>
+            <Link to="/terms">Terms</Link>
           </Tab>
-        ))}
       </TabNavigation>
     </footer>
   )
