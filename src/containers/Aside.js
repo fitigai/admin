@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import { Avatar, Pane, Tablist, SidebarTab } from 'evergreen-ui'
+import { Avatar, Pane, Tablist, Tab } from 'evergreen-ui'
 
 
 function Aside() {
@@ -16,7 +16,7 @@ function Aside() {
         <Pane display="flex" height={240}>
       <Tablist marginBottom={16} flexBasis={240} marginRight={24}>
         {tabs.map((tab, index) => (
-          <SidebarTab
+          <Tab
             key={tab}
             id={tab}
             onSelect={() => setSelectedIndex(index)}
@@ -24,7 +24,7 @@ function Aside() {
             aria-controls={`panel-${tab}`}
           >
             {tab}
-          </SidebarTab>
+          </Tab>
         ))}
       </Tablist>
     </Pane>
