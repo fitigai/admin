@@ -1,22 +1,16 @@
 import React, {useState} from "react"
-import { Avatar, Pane, Tablist, Tab } from 'evergreen-ui'
+import { Pane, Tablist, SidebarTab, Paragraph } from 'evergreen-ui'
 
 
 function Aside() {
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const [tabs] = useState(['Traits', 'Event History', 'Identities'])
+  const [selectedIndex, setSelectedIndex] = React.useState(0)
+  const [tabs] = React.useState(['Admin Home', 'Event History', 'Identities'])
   return (
     <aside className="aside-main">
-      <Avatar
-            src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg"
-            name="Alan Turing"
-        size={100}
-        className="aside-avatar"
-          />
-        <Pane display="flex" height={240}>
-      <Tablist marginBottom={16} flexBasis={240} marginRight={24}>
+     <Pane display="flex" height={240}>
+      <Tablist marginTop={50} marginBottom={16} flexBasis={240} marginRight={24}>
         {tabs.map((tab, index) => (
-          <Tab
+          <SidebarTab
             key={tab}
             id={tab}
             onSelect={() => setSelectedIndex(index)}
@@ -24,7 +18,7 @@ function Aside() {
             aria-controls={`panel-${tab}`}
           >
             {tab}
-          </Tab>
+          </SidebarTab>
         ))}
       </Tablist>
     </Pane>

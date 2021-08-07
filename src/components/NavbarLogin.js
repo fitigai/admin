@@ -5,7 +5,7 @@ import { Popover, Position, Menu, HomeIcon, CircleArrowRightIcon, ListColumnsIco
 function NavbarLogin() {
   const [isShown, setIsShown] = useState(false)
   return (
-    <div>
+    <div className="navbar-tools">
       <Tooltip content="Search-box">
         <IconButton icon={SearchIcon} />
       </Tooltip>
@@ -42,15 +42,16 @@ function NavbarLogin() {
       >
         <Button marginY={15} iconAfter={MenuIcon}>Menu</Button>
       </Popover>
-      <SideSheet isShown={isShown} onCloseComplete={() => setIsShown(false)}>
+      <SideSheet className="hidden-large" isShown={isShown} onCloseComplete={() => setIsShown(false)}>
         <Avatar
             src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg"
             name="Alan Turing"
             size={100}
+            className="navbar-gravatar"
           />
         <Paragraph margin={40}>Basic Example</Paragraph>
       </SideSheet>
-      <Button onClick={() => setIsShown(true)} marginY={15} iconAfter={CogIcon} marginRight={16}>Settings</Button>
+      <Button className="hidden-large" onClick={() => setIsShown(true)} marginY={15} iconAfter={CogIcon} marginRight={16}>Settings</Button>
   
     </div>
   )
