@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../icons/logos/Logo"
 import MobileAside from "../containers/MobileAside"
-import { Popover, Position, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon , Button, MenuIcon, LogOutIcon } from 'evergreen-ui'
+import { Popover, Position, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon , Button, MenuIcon, LogInIcon } from 'evergreen-ui'
 
 export const Navbar = props => {
 
@@ -30,8 +30,8 @@ export const Navbar = props => {
             </Menu.Group>
             <Menu.Divider />
             <Menu.Group>
-              <Menu.Item icon={LogOutIcon}>
-                <Link to="/">Logout </Link>
+              <Menu.Item icon={LogInIcon}>
+                <Link to="/login">Log-in </Link>
               </Menu.Item>
             </Menu.Group>
           </Menu>

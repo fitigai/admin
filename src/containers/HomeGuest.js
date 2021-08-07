@@ -1,8 +1,22 @@
-import React, {useEffect} from "react"
+import React, {useState} from "react"
 import Page from "../components/Page"
-import {TextInputField, Button} from 'evergreen-ui'
+import { TextInputField, Button } from 'evergreen-ui'
+import Axios from 'axios'
 
 function HomeGuest() {
+  const [username, setUsername] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    try {
+      await Axios.post('http://localhost:8080/register', { username, email, password })
+      console.log("User was successfully created.")
+    }catch(e){}
+      console.log("There was an error.")
+  }
+
   return (
     <Page wide={true} title="Welcome">
         <div className="row-center">
@@ -11,21 +25,26 @@ function HomeGuest() {
             <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
           </div>
           <div className="col-lg-5 content-narrow">
-            <TextInputField
-              label="Username"
-              placeholder="Pick a username"
-            />
-            <TextInputField
-              label="Email"
-              placeholder="you@example.com"
-          />
-          <TextInputField
-              label="Password"
-              placeholder="Create a password"
-          />
-          <Button marginRight={16} appearance="primary">
-            Sign up
-          </Button>
+            <form onSubmit={handleSubmit}>
+              <TextInputField
+                label="Username"
+                placeholder="Pick a username"
+                onChange={e => setUsername(e.target.value)}
+              />
+              <TextInputField
+                label="Email"
+                placeholder="you@example.com"
+                onChange={e => setEmail(e.target.value)}
+              />
+              <TextInputField
+                label="Password"
+                placeholder="Create a password"
+                onChange={e => setPassword(e.target.value)}
+              />
+              <Button marginRight={16} appearance="primary">
+                Sign up
+              </Button>
+            </form>
           </div>
         </div>
     </Page>

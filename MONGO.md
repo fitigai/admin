@@ -1,0 +1,1 @@
+mongodb+srv://mainUser:EJx3JFf4zh22F4kE@cluster0.qvt0x.mongodb.net/Fitigai?retryWrites=true&w=majority
