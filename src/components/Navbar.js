@@ -2,8 +2,9 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../icons/logos/Logo"
 import NavbarLogin from "./NavbarLogin"
+import NavbarLogout from "./NavbarLogout"
 
-export const Navbar = props => {
+function Navbar(props){
   return (
     <header className="navbar--header">
       <span className="navbar--logo">
@@ -11,7 +12,8 @@ export const Navbar = props => {
           <Logo />
         </Link>
       </span>
-      <NavbarLogin />
+      {console.log(props.setLoggedin)}
+      {props.setLoggedin ? <NavbarLogin/> : <NavbarLogout setLoggedin={props.setLoggedin}/>}
     </header>
   )
 }

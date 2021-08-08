@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { Link } from "react-router-dom"
-import { Popover, Position, Menu, HomeIcon, CircleArrowRightIcon, ListColumnsIcon , Button, MenuIcon, LogInIcon, Avatar, Tooltip, IconButton, SearchIcon, ChatIcon, SideSheet, Paragraph, CogIcon} from 'evergreen-ui'
+import { Popover, Position, Menu, HomeIcon, CircleArrowRightIcon, ListColumnsIcon , Button, MenuIcon, LogOutIcon, Avatar, Tooltip, IconButton, SearchIcon, ChatIcon, SideSheet, Paragraph, CogIcon} from 'evergreen-ui'
 
 function NavbarLogin() {
   const [isShown, setIsShown] = useState(false)
@@ -33,8 +33,8 @@ function NavbarLogin() {
             </Menu.Group>
             <Menu.Divider />
             <Menu.Group>
-              <Menu.Item icon={LogInIcon}>
-                <Link to="/login">Log-in</Link>
+              <Menu.Item icon={LogOutIcon}>
+                <Link to="/signin">Log out</Link>
               </Menu.Item>
             </Menu.Group>
           </Menu>

@@ -22,7 +22,7 @@ export const NavbarLogout = props => {
             <Menu.Divider />
             <Menu.Group>
               <Menu.Item icon={LogInIcon}>
-                <Link to="/login">Log-in </Link>
+                <Link to="/login">Log in</Link>
               </Menu.Item>
             </Menu.Group>
           </Menu>

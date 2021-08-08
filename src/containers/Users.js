@@ -1,5 +1,5 @@
-import React from 'react'
-import Container from "../components/Container"
+import React, { Component } from 'react'
+import Page from "../components/Page"
 import Edit from "../components/Edit"
 import Trash from "../components/Trash"
 import Aside from "./Aside"
@@ -7,7 +7,7 @@ import axios from 'axios';
 import { Avatar, Pagination, Table, Spinner, Pane } from 'evergreen-ui'
 import moment from 'moment'
 
-class Admin extends React.Component {
+class Dashboard extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -49,15 +49,13 @@ class Admin extends React.Component {
       </Pane>;
     } else {
       return (
-        <Container wide={false} transition={true}>
+        <Page wide={false} transition={true}>
           <Aside />
         <section className="section--primary">
             <div className="section-container">
               <div className="table-container">
                 <Table>
                 <Table.Head>
-                  {/* <Table.SearchHeaderCell /> */}
-                  {/* <Table.TextHeaderCell></Table.TextHeaderCell> */}
                   <Table.TextHeaderCell flexBasis={100} flexShrink={0} flexGrow={0}></Table.TextHeaderCell>
                   <Table.TextHeaderCell></Table.TextHeaderCell>
                   <Table.TextHeaderCell>Created at</Table.TextHeaderCell>
@@ -89,9 +87,9 @@ class Admin extends React.Component {
               </div>
             </div>
         </section>
-      </Container>
+      </Page>
       )}
   }
 }
 
-export default Admin
+export default Dashboard

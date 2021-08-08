@@ -3,7 +3,7 @@ import Page from "../components/Page"
 import { TextInputField, Button } from 'evergreen-ui'
 import Axios from 'axios'
 
-function HomeGuest() {
+function Signin() {
   const [username, setUsername] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
@@ -51,4 +51,4 @@ function HomeGuest() {
   )
 }
 
-export default HomeGuest
+export default Signin

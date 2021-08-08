@@ -1,10 +1,11 @@
-import React, {useState} from "react"
-import { Pane, Tablist, SidebarTab, Paragraph } from 'evergreen-ui'
+import React from "react"
+import { Link } from "react-router-dom"
+import { Pane, Tablist, SidebarTab } from 'evergreen-ui'
 
 
 function Aside() {
   const [selectedIndex, setSelectedIndex] = React.useState(0)
-  const [tabs] = React.useState(['Admin Home', 'Event History', 'Identities'])
+  const [tabs] = React.useState(['Dashboard', 'Users', 'Identities'])
   return (
     <aside className="aside-main">
      <Pane display="flex" height={240}>
@@ -17,7 +18,7 @@ function Aside() {
             isSelected={index === selectedIndex}
             aria-controls={`panel-${tab}`}
           >
-            {tab}
+            <Link to={tab}>{tab}</Link>
           </SidebarTab>
         ))}
       </Tablist>
