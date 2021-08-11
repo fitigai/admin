@@ -4,7 +4,7 @@ import Logo from "../icons/logos/Logo"
 import NavbarLogin from "./NavbarLogin"
 import NavbarLogout from "./NavbarLogout"
 
-function Navbar(props){
+function Navbar(props) {
   return (
     <header className="navbar--header">
       <span className="navbar--logo">
@@ -12,8 +12,7 @@ function Navbar(props){
           <Logo />
         </Link>
       </span>
-      {console.log(props.setLoggedin)}
-      {props.setLoggedin ? <NavbarLogin/> : <NavbarLogout setLoggedin={props.setLoggedin}/>}
+      {props.setLoggedin ? <NavbarLogin /> : <NavbarLogout setLoggedin={props.setLoggedin} />}
     </header>
   )
 }
