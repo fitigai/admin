@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Container from "../components/Container"
+import MainContainer from "../styles/MainContainer"
 import { TextInputField, Button } from "evergreen-ui"
 import Axios from "axios"
 
@@ -18,7 +18,7 @@ function Signin() {
   }
 
   return (
-    <Container wide={true}>
+    <MainContainer narrowContainer>
       <div className="row-center">
         <div className="col-lg-7 content-narrow">
           <h1>Welcome Folks !</h1>
@@ -35,7 +35,7 @@ function Signin() {
           </form>
         </div>
       </div>
-    </Container>
+    </MainContainer>
   )
 }
 

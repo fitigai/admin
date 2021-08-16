@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Container from "../components/Container"
+import MainContainer from "../styles/MainContainer"
 import Edit from "../components/Edit"
 import Trash from "../components/Trash"
 import Aside from "./Aside"
@@ -7,7 +7,7 @@ import axios from "axios"
 import { Avatar, Pagination, Table, Spinner, Pane } from "evergreen-ui"
 import moment from "moment"
 
-class Dashboard extends Component {
+class Users extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -50,7 +50,7 @@ class Dashboard extends Component {
       )
     } else {
       return (
-        <Container wide={false}>
+        <MainContainer>
           <Aside />
           <section className="section--primary">
             <div className="section-container">
@@ -95,10 +95,10 @@ class Dashboard extends Component {
               </div>
             </div>
           </section>
-        </Container>
+        </MainContainer>
       )
     }
   }
 }
 
-export default Dashboard
+export default Users

@@ -1,30 +1,22 @@
 import React, { useState } from "react"
-import Container from "../components/Container"
+import MainContainer from "../styles/MainContainer"
 import { TextInput, Button } from "evergreen-ui"
-import Axios from "axios"
 
-function Login(props) {
+function Login() {
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
 
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const response = await Axios.post("http://localhost:8080/login", { username, password })
-      if (response.data) {
-        console.log(response.data)
-        console.log(props.setLoggedin)
-        props.setLoggedin(true)
-      } else {
-        console.log("Incorrect username / password.")
-      }
+      console.log("I'm in!")
     } catch (e) {
       console.log("There was a problem.")
     }
   }
 
   return (
-    <Container wide="false">
+    <MainContainer narrowContainer>
       <div className="block-center">
         <form onSubmit={handleSubmit}>
           <h2>Enter your username and password to access to your account</h2>
@@ -35,7 +27,7 @@ function Login(props) {
           </Button>
         </form>
       </div>
-    </Container>
+    </MainContainer>
   )
 }
 

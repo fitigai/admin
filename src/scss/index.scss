@@ -6,15 +6,8 @@
 @import "libs/base";
 @import "libs/fonts";
 
-
 @import "../containers/Admin";
 
 @import "../components/Container";
 @import "../components/Navbar";
 @import "../components/Footer";
-
-.admin__aside{
-  background-color: $primary;
-  width: 300px;
-  height: 100%;
-}
