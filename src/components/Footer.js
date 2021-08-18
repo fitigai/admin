@@ -3,7 +3,7 @@ import { TabNavigation, Tab } from "evergreen-ui"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-const MainFooter = styled.footer`
+const FooterNav = styled.nav`
   position: relative;
   display: flex;
   flex-direction: row;
@@ -15,7 +15,7 @@ const MainFooter = styled.footer`
 
 function Footer() {
   return (
-    <MainFooter>
+    <FooterNav>
       <TabNavigation marginBottom={16}>
         <Tab>
           <Link to="/">Home</Link>
@@ -27,7 +27,7 @@ function Footer() {
           <Link to="/terms">Terms</Link>
         </Tab>
       </TabNavigation>
-    </MainFooter>
+    </FooterNav>
   )
 }
 

@@ -1,28 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import styled from "styled-components"
-import { Popover, Position, Menu, HomeIcon, CircleArrowRightIcon, ListColumnsIcon, Button, MenuIcon, LogOutIcon, Avatar, Tooltip, IconButton, SearchIcon, ChatIcon, SideSheet, Paragraph, CogIcon } from "evergreen-ui"
-import { DEVICE } from "../styles/GlobalStyleVariable"
-
-const NavbarTools = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`
-
-const SideSheetHiddenUp = styled(SideSheet)`
-  display: block;
-  @media ${DEVICE.mobileL} {
-    display: none;
-  }
-`
-
-const ButtonHiddenUp = styled(Button)`
-  display: block;
-  @media ${DEVICE.mobileL} {
-    display: none;
-  }
-`
+import { Popover, Position, Menu, HomeIcon, CircleArrowRightIcon, ListColumnsIcon, Button, MenuIcon, LogOutIcon, Avatar, Tooltip, IconButton, SearchIcon, Paragraph, CogIcon, ChatIcon } from "evergreen-ui"
+import { NavbarTools, SideSheetHiddenUp, ButtonHiddenUp } from "./Navbar.elements"
 
 function NavbarLogin() {
   const [isShown, setIsShown] = useState(false)

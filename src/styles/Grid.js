@@ -1,19 +1,19 @@
 import React from "react"
 import styled, { css } from "styled-components"
 
-const Container = styled.main`
-  position: relative;
+export const Container = styled.div`
   height: 100%;
   display: block;
   width: ${props => (props.narrowContainer ? "calc(100% - 1rem)" : "100%")};
-  max-width: 80rem;
+  max-width: 1300px;
   margin: 0 auto;
+  padding: 0 50px;
+
+  @media screen and (max-width: 991px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 `
-
-export default function Container(props) {
-  return <Container>{props.children}</Container>
-}
-
 
 const FlexItems = {
   top: `-webkit-box-align: flex-start;
@@ -46,10 +46,6 @@ const Row = styled.div`
   height: 100%;
 `
 
-export default function Row(props) {
-  return <Row>{props.children}</Row>
-}
-
 // const column = 12
 
 // function gridSystem(colNb) {
@@ -66,20 +62,20 @@ export default function Row(props) {
 // `
 
 const media = {
-  xs: (styles) => {`
+  xs: styles => {
+    ;`
     @media only screen and (min-width: 768px){
       ${styles}
     }
-  `}
+  `
+  }
 }
 
 const Col = styled.div`
-   flex: ${(props) => props.size}
-   ${(props) => props.collapse && media[props.collapse](`
+  flex: ${props => props.size};
+  ${props =>
+    props.collapse &&
+    media[props.collapse](`
       display: none;
-   `)}
+   `)};
 `
-
-export default function Col(props) {
-  return <Col>{props.children}</Col>
-}

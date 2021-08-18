@@ -5,7 +5,7 @@ import Signin from "./Signin"
 import About from "./About"
 import Terms from "./Terms"
 import Login from "./Login"
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer"
 import GlobalStyle from "../styles/GlobalStyle"
 

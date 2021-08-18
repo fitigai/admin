@@ -1,9 +1,9 @@
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Poppins', 'Helvetica', 'Arial', sans-serif;
-        url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,700&display=swap');
+        src : url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,700&display=swap');
     }
 
     html,
@@ -110,6 +110,20 @@ const GlobalStyle = createGlobalStyle`
       font-size: 1.9rem;
       font-weight: 800;
     }
+`
+
+export const Container = styled.div`
+  height: 100%;
+  display: block;
+  width: ${props => (props.narrowContainer ? "calc(100% - 1rem)" : "100%")};
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+
+  @media screen and (max-width: 991px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 `
 
 export default GlobalStyle
