@@ -1,33 +1,25 @@
 import React, { useState } from "react"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Dashboard from "./Dashboard"
-import Signin from "./Signin"
-import About from "./About"
-import Terms from "./Terms"
-import Login from "./Login"
+import HomePage from "./HomePage"
 import Navbar from "../components/Navbar/Navbar"
-import Footer from "../components/Footer"
 import GlobalStyle from "../styles/GlobalStyle"
 
 function App(props) {
-  const [loggedIn, setLoggedin] = useState()
+  const [loggedIn, setLoggedin] = useState(false)
 
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Navbar setLoggedin={setLoggedin} />
+      <Navbar setLoggedin={loggedIn} />
       <Route
         render={({ location }) => (
           <Switch location={location}>
-            <Route exact path="/" component={Signin} />
-            <Route path="/login" component={Login} />
+            <Route exact path="/" component={HomePage} />
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/about" component={About} />
-            <Route path="/terms" component={Terms} />
           </Switch>
         )}
       />
-      <Footer />
     </BrowserRouter>
   )
 }

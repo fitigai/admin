@@ -1,5 +1,5 @@
 export const COLORS_VARIABLES = {
-  primary: "#293B5F",
+  primary: "#004EFF",
   secondary: "#B2AB8C",
   accent: "#47597E",
   danger: "#d50000",
@@ -30,12 +30,30 @@ const SIZE_SCREEN_VARIABLES = {
 }
 
 export const DEVICE = {
-  mobileS: `(min-width: ${SIZE_SCREEN_VARIABLES.mobileS})`,
-  mobileM: `(min-width: ${SIZE_SCREEN_VARIABLES.mobileM})`,
-  mobileL: `(min-width: ${SIZE_SCREEN_VARIABLES.mobileL})`,
-  tablet: `(min-width: ${SIZE_SCREEN_VARIABLES.tablet})`,
-  laptop: `(min-width: ${SIZE_SCREEN_VARIABLES.laptop})`,
-  laptopL: `(min-width: ${SIZE_SCREEN_VARIABLES.laptopL})`,
-  desktop: `(min-width: ${SIZE_SCREEN_VARIABLES.desktop})`,
-  desktopL: `(min-width: ${SIZE_SCREEN_VARIABLES.desktop})`
+  mobileS: `@media only screen and (min-width: ${SIZE_SCREEN_VARIABLES.mobileS}){display: none}`,
+  mobileM: `@media only screen and (min-width: ${SIZE_SCREEN_VARIABLES.mobileM}){display: none}`,
+  mobileL: `@media only screen and (min-width: ${SIZE_SCREEN_VARIABLES.mobileL}){display: none}`,
+  tablet: `@media only screen and (min-width: ${SIZE_SCREEN_VARIABLES.tablet}){display: none}`,
+  laptop: `@media only screen and (min-width: ${SIZE_SCREEN_VARIABLES.laptop}){display: none}`,
+  laptopL: `@media only screen and (min-width: ${SIZE_SCREEN_VARIABLES.laptopL}){display: none}`,
+  desktop: `@media only screen and (min-width: ${SIZE_SCREEN_VARIABLES.desktop}){display: none}`,
+  desktopL: `@media only screen and (min-width: ${SIZE_SCREEN_VARIABLES.desktop}){display: none}`
+}
+
+export const FlexItems = {
+  top: `-webkit-box-align: flex-start;
+            -moz-box-align: flex-start;
+            -ms-flex-align: flex-start;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;`,
+  stretch: `-webkit-box-align: stretch;
+            -moz-box-align: stretch;
+            -ms-flex-align: stretch;
+            -webkit-align-items: stretch;
+            align-items: stretch;`,
+  center: `-webkit-box-align: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;`
 }
