@@ -5,7 +5,7 @@ import HomePage from "./HomePage"
 import Navbar from "../components/Navbar/Navbar"
 import GlobalStyle from "../styles/GlobalStyle"
 
-function App(props) {
+function App() {
   const [loggedIn, setLoggedin] = useState(false)
 
   return (

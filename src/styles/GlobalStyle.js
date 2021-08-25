@@ -102,8 +102,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
+      font-size: 25px;
+      font-weight: 600;
+      padding: 1rem 0;
     }
 
     h2 {
@@ -124,6 +125,19 @@ export const Container = styled.div`
     padding-right: 30px;
     padding-left: 30px;
   }
+`
+
+export const Row = styled.div`
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: ${props => props.FlexItems};
+  width: 100%;
+  height: 100%;
 `
 
 export default GlobalStyle

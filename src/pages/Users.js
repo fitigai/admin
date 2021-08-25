@@ -52,49 +52,42 @@ class Users extends Component {
       return (
         <MainContainer>
           <Aside />
-          <section className="section--primary">
-            <div className="section-container">
-              <div className="table-container">
-                <Table>
-                  <Table.Head>
-                    <Table.TextHeaderCell flexBasis={100} flexShrink={0} flexGrow={0}></Table.TextHeaderCell>
-                    <Table.TextHeaderCell></Table.TextHeaderCell>
-                    <Table.TextHeaderCell>Created at</Table.TextHeaderCell>
-                    <Table.TextHeaderCell>Email</Table.TextHeaderCell>
-                    <Table.TextHeaderCell>Phone</Table.TextHeaderCell>
-                    <Table.TextHeaderCell>Status</Table.TextHeaderCell>
-                    <Table.TextHeaderCell>Actions</Table.TextHeaderCell>
-                  </Table.Head>
-                  <Table.Body height={500}>
-                    {items.map(item => (
-                      <Table.Row key={item._id}>
-                        {/* <Table.TextCell></Table.TextCell> */}
-                        <Table.TextCell flexBasis={100} flexShrink={0} flexGrow={0}>
-                          <Avatar name="Jeroen Ransijn" size={40} />
-                        </Table.TextCell>
-                        <Table.TextCell>
-                          {item.firstName} {item.lastName}
-                        </Table.TextCell>
-                        <Table.TextCell>{moment(item.createdAt).format("MMMM Do YYYY")}</Table.TextCell>
-                        <Table.TextCell>
-                          <a href={"mailto:" + item.email}>{item.email}</a>
-                        </Table.TextCell>
-                        <Table.TextCell isNumber>{item.phone}</Table.TextCell>
-                        <Table.TextCell>{item.isCoach ? "isCoach" : "isStudent"}</Table.TextCell>
-                        <Table.TextCell>
-                          <div className="reset-float">
-                            <Edit />
-                            <Trash />
-                          </div>
-                        </Table.TextCell>
-                      </Table.Row>
-                    ))}
-                  </Table.Body>
-                </Table>
-                <Pagination page={1} totalPages={5} className="table-pagination"></Pagination>
-              </div>
-            </div>
-          </section>
+
+          <Table>
+            <Table.Head>
+              <Table.TextHeaderCell flexBasis={100} flexShrink={0} flexGrow={0}></Table.TextHeaderCell>
+              <Table.TextHeaderCell></Table.TextHeaderCell>
+              <Table.TextHeaderCell>Created at</Table.TextHeaderCell>
+              <Table.TextHeaderCell>Email</Table.TextHeaderCell>
+              <Table.TextHeaderCell>Phone</Table.TextHeaderCell>
+              <Table.TextHeaderCell>Status</Table.TextHeaderCell>
+              <Table.TextHeaderCell>Actions</Table.TextHeaderCell>
+            </Table.Head>
+            <Table.Body height={500}>
+              {items.map(item => (
+                <Table.Row key={item._id}>
+                  {/* <Table.TextCell></Table.TextCell> */}
+                  <Table.TextCell flexBasis={100} flexShrink={0} flexGrow={0}>
+                    <Avatar name="Jeroen Ransijn" size={40} />
+                  </Table.TextCell>
+                  <Table.TextCell>
+                    {item.firstName} {item.lastName}
+                  </Table.TextCell>
+                  <Table.TextCell>{moment(item.createdAt).format("MMMM Do YYYY")}</Table.TextCell>
+                  <Table.TextCell>
+                    <a href={"mailto:" + item.email}>{item.email}</a>
+                  </Table.TextCell>
+                  <Table.TextCell isNumber>{item.phone}</Table.TextCell>
+                  <Table.TextCell>{item.isCoach ? "isCoach" : "isStudent"}</Table.TextCell>
+                  <Table.TextCell>
+                    <Edit />
+                    <Trash />
+                  </Table.TextCell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+          <Pagination page={1} totalPages={5} className="table-pagination"></Pagination>
         </MainContainer>
       )
     }

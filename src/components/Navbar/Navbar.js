@@ -1,7 +1,6 @@
 import React from "react"
-import Logo from "./NavbarLogo"
+import Logo from "../Logo/Logo"
 import NavbarLogin from "./NavbarLogin"
-import NavbarLogout from "./NavbarLogout"
 import { Nav, NavbarContainer, NavbarLogo } from "./Navbar.elements"
 
 function Navbar(props) {
