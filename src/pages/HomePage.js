@@ -5,7 +5,11 @@ import FormInputField from "../components/Form/FormInputField"
 import Logo from "../components/Logo/Logo"
 
 function HomePage() {
-  async function handleSubmit(e) {
+  const [inputValues, setInputValues] = useState({
+    firstname: "",
+    password: ""
+  })
+  function handleSubmit(e) {
     e.preventDefault()
     console.log("User was successfully created.")
   }
@@ -16,8 +20,8 @@ function HomePage() {
         <Logo />
         <h1>Bienvenue sur la plate-forme Fitigai Admin</h1>
         <FormTextCenter>Le futur de Fitigai se trouve ici. Faites un choix statistique en évaluant les tendances de vos utilisateurs et concevez de nouveau moyen de gestion. Créez une technologie durable afin que vos utilisateurs continuent de participer à la course de la performance.</FormTextCenter>
-        <FormInputField />
-        <FormInputField />
+        <FormInputField fieldInputTitle="Pick your username or email" formInputText={inputValues.firstname} />
+        <FormInputField fieldInputTitle="Pick your password" formInputText={inputValues.password} />
         <Button marginRight={16} appearance="primary">
           Sign up
         </Button>

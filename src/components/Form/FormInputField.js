@@ -1,39 +1,30 @@
 import React, { useState } from "react"
 import { FieldInput, FieldLabel, Input } from "./Form.elements"
 
-function FormInputField() {
-  const [inputValues, setInputValues] = useState({
-    firstname: "",
-    lastname: ""
-  })
+function FormInputField(props) {
+  const [onFocus, setOnFocus] = useState(false)
+  const [hasLabel, setHasLabel] = useState(false)
 
-  function handleFocus(input) {
-    if (input.target) {
-      input.target.parentNode.classList.add("is-focused", "has-label")
-    }
+  function onBlurField(event) {
+    event.target.value != "" ? setHasLabel(true) : setHasLabel(false)
+    setOnFocus(false)
   }
 
-  function handleChange(input) {
-    if (input.target.value !== "") {
-      input.target.parentNode.classList.add("has-label")
-    }
-    const { name, value } = input.target
-    setInputValues({ ...inputValues, [name]: value })
+  function onFocusField(event) {
+    event.target.value != "" ? setHasLabel(true) : setHasLabel(false)
+    setOnFocus(true)
   }
 
-  function handleBlur(input) {
-    if (input.target.value === "") {
-      input.target.parentNode.classList.remove("has-label")
-    }
-    input.target.parentNode.classList.remove("is-focused")
+  function onClickField() {
+    setHasLabel(true)
   }
 
   return (
-    <FieldInput>
-      <FieldLabel htmlFor="firstname">
-        <small>Tapez votre numéro de mobile</small>
+    <FieldInput className={onFocus ? `is-focused` : ""}>
+      <FieldLabel htmlFor="firstname" className={hasLabel ? `has-label` : ""}>
+        <small>{props.fieldInputTitle}</small>
       </FieldLabel>
-      <Input type="text" id="firstname" name="firstname" required onFocus={handleFocus} onChange={handleChange} onBlur={handleBlur} />
+      <Input type="text" id={props.formInputText} name={props.formInputText} value={props.value} required onFocus={onFocusField} onBlur={onBlurField} onClick={onClickField} />
     </FieldInput>
   )
 }

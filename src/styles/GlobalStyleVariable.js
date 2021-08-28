@@ -15,6 +15,7 @@ export const FONT_VARIABLES = {
   heading: `'Poppins', 'Helvetica', 'Arial', sans-serif`,
   light: "300",
   regular: "400",
+  semiBold: "600",
   bold: "700",
   black: "900"
 }
