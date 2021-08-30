@@ -1,5 +1,5 @@
 import React from "react"
-import Container from "../styles/GlobalStyle"
+import { Container } from "./Pages.elements"
 
 function Dashboard() {
   return (

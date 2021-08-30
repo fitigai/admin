@@ -8,7 +8,7 @@ export const COLORS_VARIABLES = {
   white: "#ffffff",
   gray: "#707070",
   grayLight: "#ebebeb",
-  grayDark: "#222222"
+  grayDark: "#575757"
 }
 export const FONT_VARIABLES = {
   family: `'Poppins', 'Helvetica', 'Arial', sans-serif`,

@@ -11,7 +11,7 @@ function Navbar(props) {
           <Logo />
           Fitigai
         </NavbarLogo>
-        {props.setLoggedin ? <NavbarLogin setLoggedin={props.setLoggedin} /> : ""}
+        <NavbarLogin />
       </NavbarContainer>
     </Nav>
   )

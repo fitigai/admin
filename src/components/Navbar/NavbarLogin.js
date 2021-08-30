@@ -1,13 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
-import { Popover, Position, Menu, HomeIcon, CircleArrowRightIcon, ListColumnsIcon, Button, MenuIcon, LogOutIcon, Avatar, Tooltip, IconButton, SearchIcon, Paragraph, CogIcon, ChatIcon } from "evergreen-ui"
-import { NavbarTools, NavMobile } from "./Navbar.elements"
+import { Menu, HomeIcon, CircleArrowRightIcon, ListColumnsIcon, LogOutIcon, Avatar, ChevronDownIcon } from "evergreen-ui"
+import { NavbarTools, NavMobile, NavbarButton } from "./Navbar.elements"
 
 function NavbarLogin() {
-  const [isShown, setIsShown] = useState(false)
   return (
     <NavbarTools>
-      <Avatar src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg" name="Alan Turing" size={40} />
       <NavMobile
         content={
           <Menu>
@@ -28,9 +26,11 @@ function NavbarLogin() {
           </Menu>
         }
       >
-        <Button marginY={15} iconAfter={MenuIcon}>
-          Menu
-        </Button>
+        <NavbarButton>
+          <Avatar src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg" name="Alan Turing" size={40} />
+          <small>Menu</small>
+          <ChevronDownIcon />
+        </NavbarButton>
       </NavMobile>
     </NavbarTools>
   )
