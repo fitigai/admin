@@ -35,36 +35,10 @@ export const NavbarLogo = styled(Link)`
 `
 
 export const NavbarTools = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`
-
-export const NavMobile = styled(Popover)`
-  display: block;
   position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(0, 0);
-  cursor: pointer;
-
-  @media ${DEVICE.mobileL} {
-    display: none;
-  }
-`
-
-export const SideSheetHiddenUp = styled.div`
-  display: block;
-  @media ${DEVICE.mobileL} {
-    display: none;
-  }
-`
-
-export const ButtonHiddenUp = styled.div`
-  display: block;
-  @media ${DEVICE.mobileL} {
-    display: none;
-  }
+  top: 50%;
+  right: ${props => props.rightPosition};
+  transform: translateY(-50%);
 `
 
 export const NavbarButton = styled.button`
@@ -78,6 +52,7 @@ export const NavbarButton = styled.button`
   font-weight: ${FONT_VARIABLES.bold};
   color: ${COLORS_VARIABLES.grayDark};
   font-size: 1rem;
+  background-color: ${props => props.backgroundButton};
   small {
     padding: 0 0.4rem;
   }
