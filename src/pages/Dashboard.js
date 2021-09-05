@@ -1,7 +1,11 @@
 import React from "react"
 import { Container } from "./Pages.elements"
+import { Redirect } from "react-router-dom"
 
-function Dashboard() {
+function Dashboard({ autorized }) {
+  if (!autorized) {
+    return <Redirect to="/" />
+  }
   return (
     <Container>
       <div className="dashboard-container">

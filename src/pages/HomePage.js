@@ -13,7 +13,7 @@ function Homepage() {
     password: ""
   })
   function handleSubmit(e) {
-    // e.preventDefault()
+    e.preventDefault()
     // setIsLoggedIn(true)
     // if (isLoggedIn) {
     history.push("/dashboard")
@@ -22,7 +22,11 @@ function Homepage() {
 
   return (
     <MainHomePage imgUrl={process.env.PUBLIC_URL + "/homepage-background.jpg"}>
-      <FormFloating onSubmit={handleSubmit}>
+      <FormFloating
+        onSubmit={() => {
+          history.push("/dashboard")
+        }}
+      >
         <Logo />
         <h1>Bienvenue sur la plate-forme Fitigai Admin</h1>
         <FormTextCenter>Le futur de Fitigai se trouve ici. Faites un choix statistique en évaluant les tendances de vos utilisateurs et concevez de nouveau moyen de gestion. Créez une technologie durable afin que vos utilisateurs continuent de participer à la course de la performance.</FormTextCenter>
