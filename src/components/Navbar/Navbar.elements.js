@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { DEVICE, FONT_VARIABLES, COLORS_VARIABLES } from "../../styles/GlobalStyleVariable"
-import { Container } from "../../pages/Pages.elements"
-import { Popover } from "evergreen-ui"
+import { FONT_VARIABLES, COLORS_VARIABLES } from "../../styles/GlobalStyleVariable"
 
 export const Nav = styled.nav`
   height: 80px;
@@ -14,13 +12,6 @@ export const Nav = styled.nav`
   z-index: 999;
   font-size: 1.2rem;
   background-color: ${COLORS_VARIABLES.white};
-`
-
-export const NavbarContainer = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  ${Container}
 `
 
 export const NavbarLogo = styled(Link)`
