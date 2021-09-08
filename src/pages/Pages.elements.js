@@ -30,8 +30,15 @@ export const MainHomePage = styled.main`
 export const DashboardPage = styled.main`
   display: grid;
   grid-template-columns: 300px 1fr 1fr;
+  height: 100%;
 `
 
-export const UserListPane = styled.section``
+export const UserListPane = styled.section`
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: ${COLORS_VARIABLES.accent};
+`
 
 export const DashboardPane = styled.section``

@@ -1,13 +1,13 @@
 export const COLORS_VARIABLES = {
   primary: "#004EFF",
   secondary: "#B2AB8C",
-  accent: "#47597E",
+  accent: "#F5F8FF",
   danger: "#d50000",
   success: "#00c853",
   dark: "#000000",
   white: "#ffffff",
   gray: "#707070",
-  grayLight: "#ebebeb",
+  grayLight: "#F2F2F2",
   grayDark: "#575757"
 }
 export const FONT_VARIABLES = {
