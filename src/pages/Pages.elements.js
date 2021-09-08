@@ -18,4 +18,20 @@ export const FormTextCenter = styled.p`
   font-size: 0.8rem;
 `
 
-export const DashboardPane = styled.div``
+export const MainHomePage = styled.main`
+  width: 100%;
+  height: calc(100% - 80px);
+  background: url(${props => props.imgUrl}) top center no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const DashboardPage = styled.main`
+  display: grid;
+  grid-template-columns: 300px 1fr 1fr;
+`
+
+export const UserListPane = styled.section``
+
+export const DashboardPane = styled.section``

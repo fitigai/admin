@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { MainHomePage } from "../components/Container/Container.elements"
-import { FormFloating, FormTextCenter } from "./Pages.elements"
+import { MainHomePage, FormFloating, FormTextCenter } from "./Pages.elements"
 import FormInputField from "../components/Form/FormInputField"
 import Button from "../components/Button/Button"
 import Logo from "../components/Logo/Logo"

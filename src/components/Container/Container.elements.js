@@ -1,14 +1,5 @@
 import styled from "styled-components"
 
-export const MainHomePage = styled.main`
-  width: 100%;
-  height: calc(100% - 80px);
-  background: url(${props => props.imgUrl}) top center no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
 export const Container = styled.div`
   height: 100%;
   display: block;
@@ -23,13 +14,6 @@ export const Container = styled.div`
   }
 `
 
-export const NavbarContainer = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  ${Container}
-`
-
 export const Row = styled.div`
   display: -webkit-box;
   display: -moz-box;
@@ -42,5 +26,9 @@ export const Row = styled.div`
   width: 100%;
   height: 100%;
 `
-
-export const DashboardContainer = styled.div``
+export const NavbarContainer = styled(Container)`
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  ${Container}
+`
