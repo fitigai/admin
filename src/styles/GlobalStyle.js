@@ -108,8 +108,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h2 {
-      font-size: 1.9rem;
-      font-weight: 800;
+      font-size: 1.6rem;
+      font-weight: 600;
     }
 `
 
