@@ -43,14 +43,6 @@ export const UserListPane = styled.section`
 
 export const DashboardPane = styled.section``
 
-export const Title_2 = styled.h2`
-  color: ${COLORS_VARIABLES.primary};
-`
-
 export const Title_3 = styled.h3`
   color: ${COLORS_VARIABLES.primary};
-`
-
-export const HeaderPane = styled.header`
-  padding: 1rem;
 `

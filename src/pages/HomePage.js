@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { MainHomePage, FormFloating, FormTextCenter } from "./Pages.elements"
-import FormInputField from "../components/Form/FormInputField"
+import FormInputField from "../components/Form/Input/FormInputField"
 import Button from "../components/Button/Button"
 import Logo from "../components/Logo/Logo"
 import { useHistory } from "react-router-dom"

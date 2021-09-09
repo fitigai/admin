@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { COLORS_VARIABLES, FONT_VARIABLES } from "../../styles/GlobalStyleVariable"
+import { COLORS_VARIABLES, FONT_VARIABLES } from "../../../styles/GlobalStyleVariable"
 
 export const FieldInput = styled.div`
   position: relative;
