@@ -32,7 +32,7 @@ export const OptionContainer = styled.div`
   border-radius: 8px;
   overflow: hidden;
 
-  &.is-active{
+  &.is-active {
     max-height: 240px;
     opacity: 1;
     overflow-y: scroll;
@@ -48,48 +48,45 @@ export const OptionContainer = styled.div`
   }
 `
 
+// export const.select-box label,
+// export const.is-selected {
+//   padding: 12px 24px;
+//   cursor: pointer;
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+// }
 
+// export const.select-box .is-selected {
+//   background-color: $gray-dark;
+//   border-radius: 8px;
+//   margin-bottom: 8px;
+//   color: #f5f6fa;
+//   position: relative;
+//   order: 1px;
+//   &:after {
+//     content: "";
+//     background: url("../../img/svg/triangle.svg");
+//     background-size: contain;
+//     background-repeat: no-repeat;
 
+//     position: absolute;
+//     height: 100%;
+//     width: 20px;
+//     right: 10px;
+//     top: 12px;
+//     transition: all 0.4s;
+//   }
+// }
 
-export const.select-box label,
-export const.is-selected {
-  padding: 12px 24px;
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+// .select-box .options--container.is-active + .select-box .is-selected::after {
+//   transform: rotateX(180deg);
+//   top: -6px;
+// }
 
-export const.select-box .is-selected {
-  background-color: $gray-dark;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  color: #f5f6fa;
-  position: relative;
-  order: 1px;
-  &:after {
-    content: "";
-    background: url("../../img/svg/triangle.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    position: absolute;
-    height: 100%;
-    width: 20px;
-    right: 10px;
-    top: 12px;
-    transition: all 0.4s;
-  }
-}
-
-.select-box .options--container.is-active + .select-box .is-selected::after {
-  transform: rotateX(180deg);
-  top: -6px;
-}
-
-.select-box .option:hover {
-  background: $gray;
-}
-.select-box .option .radio {
-  display: none;
-}
+// .select-box .option:hover {
+//   background: $gray;
+// }
+// .select-box .option .radio {
+//   display: none;
+// }
