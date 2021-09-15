@@ -1,23 +1,19 @@
-import React from "react"
-import { Pane, Tablist } from "evergreen-ui"
-import { AsideMain, AsideLink } from "./Aside.elements"
+import React, { useState } from "react"
+import { TabNavigation } from "evergreen-ui"
+import { AsideMain, TabNav } from "./Aside.elements"
 
 function AsideNav() {
-  const [selectedIndex, setSelectedIndex] = React.useState(0)
-  const [tabs] = React.useState(["Dashboard", "Users", "Identities"])
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [tabs] = useState(["Traits", "Event History", "Identities"])
   return (
     <AsideMain>
-      <Pane display="flex" height={240}>
-        <Tablist marginTop={50} marginBottom={16} flexBasis={240} marginRight={24}>
-          {tabs.map((tab, index) => (
-            <ul key={tab} id={tab} onSelect={() => setSelectedIndex(index)} isSelected={index === selectedIndex} aria-controls={`panel-${tab}`}>
-              <li>
-                <AsideLink to={tab}>{tab}</AsideLink>
-              </li>
-            </ul>
-          ))}
-        </Tablist>
-      </Pane>
+      <TabNavigation marginBottom={16} marginTop={100}>
+        {tabs.map((tab, index) => (
+          <TabNav key={tab} is="a" href="#" id={tab} isSelected={index === 0}>
+            {tab}
+          </TabNav>
+        ))}
+      </TabNavigation>
     </AsideMain>
   )
 }

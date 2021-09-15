@@ -30,7 +30,7 @@ export const MainHomePage = styled.main`
 export const DashboardPage = styled.main`
   display: grid;
   grid-template-columns: 300px 1fr 1fr;
-  height: 100%;
+  height: calc(100% - 80px);
 `
 
 export const UserListPane = styled.section`
@@ -43,6 +43,6 @@ export const UserListPane = styled.section`
 
 export const DashboardPane = styled.section``
 
-export const Title_3 = styled.h3`
+export const TitleThree = styled.h3`
   color: ${COLORS_VARIABLES.primary};
 `

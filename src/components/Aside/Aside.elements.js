@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
 import { COLORS_VARIABLES, FONT_VARIABLES } from "../../styles/GlobalStyleVariable"
+import { Tab } from "evergreen-ui"
 
 export const AsideMain = styled.aside`
   position: relative;
@@ -8,18 +8,20 @@ export const AsideMain = styled.aside`
   background-color: ${COLORS_VARIABLES.grayLight};
 `
 
-export const AsideLink = styled(Link)`
+export const TabNav = styled(Tab)`
+  display: block;
+  margin: 10px 0;
   padding: 0.5rem 0 0.5rem 1.5rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 0.5rem;
-  border-radius: 20px;
   color: ${COLORS_VARIABLES.grayDark};
   font-weight: ${FONT_VARIABLES.semiBold};
   font-size: 1rem;
   transition-duration: 0.3s;
+  width: 100%;
+
   &:hover {
-    background-color: #bed2ff;
     color: ${COLORS_VARIABLES.dark};
+  }
+  &[aria-current="page"]:hover {
+    color: ${COLORS_VARIABLES.primary};
   }
 `

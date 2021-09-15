@@ -1,27 +1,67 @@
-import React from "react"
+import React, { useState } from "react"
+import { OptionForm, SelectBox, OptionContainer, FieldOptions, SvgTriangle, OptionList } from "./Option.elements"
 
 function OptionDropDown() {
+  const [isActive, setIsaActive] = useState(false)
+  const [isSelected, setIsSelected] = useState(false)
+  const [option, setOption] = useState("-")
+
+  // selectOption: "-",
+  //   showSelect: false
+  function handleOption() {
+    setIsaActive(true)
+  }
+  function handleSelection() {
+    setIsaActive(false)
+  }
+
+  function toggleHandler(event) {
+    event.stopPropagation()
+    setIsaActive(!isActive)
+
+    const handler = event => {
+      if (isActive == true && !this.optionsRef.current.contains(event.target)) {
+        setIsaActive(!isActive)
+      }
+    }
+    document.addEventListener("mousedown", handler)
+    return () => {
+      document.removeEventListener("mousedown", handler)
+    }
+  }
+
+  function onSelect(event) {
+    event.stopPropagation()
+    let target = event.target.parentNode.firstElementChild
+    if (target.value) {
+      setOption(target.name)
+      setIsaActive(!isActive)
+      this.props.products.forEach(actionFilter => {
+        if (actionFilter.identifier === target.value) {
+          this.props.filterByMerchant(actionFilter)
+        }
+      })
+    }
+  }
   return (
     <>
-      <form action="#" class="form-mobile">
-        <div class="select-box">
-          <div class="options-container">
-            <a href="#">
-              <div class="option is-active ">
-                <label for="option-1">1221</label>
-              </div>
-            </a>
-          </div>
-          <div class="field-inline selected">
-            <span>23332</span>
-            <svg class="triangle" height="5.15" viewbox="0 0 9.339 5.15" width="9.339" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5,8.8.5,4.7a.52.52,0,0,1,0-.8.52.52,0,0,1,.8,0L5,7.2,8.7,3.8a.608.608,0,0,1,.8,0,.608.608,0,0,1,0,.8Z" id="triangle" transform="translate(-0.311 -3.65)" />
-            </svg>
-          </div>
+      <SelectBox>
+        <div className="is-selected" onClick={toggleHandler}>
+          {props.merchant.name ? props.merchant.name : selectOption}
         </div>
-      </form>
+        <OptionContainer className={showSelect ? "is-active" : ""} ref={optionsRef}>
+          {this.props.products.map(option => {
+            return (
+              <div className="option" key={option.identifier}>
+                <input type="radio" className="radio" id={option.identifier} value={option.identifier} name={option.name} />
+                <label htmlFor={option.identifier} onClick={onSelect}>
+                  {option.name}
+                </label>
+              </div>
+            )
+          })}
+        </OptionContainer>
+      </SelectBox>
     </>
   )
 }
-
-export default OptionDropDown

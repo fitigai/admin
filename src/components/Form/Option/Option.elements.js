@@ -1,107 +1,95 @@
-/** ------- SELECT OPTIONS ------- **/
+import styled from "styled-components"
+import { COLORS_VARIABLES } from "../../../styles/GlobalStyleVariable"
 
-// .form-mobile {
-//   display: flex;
-//   flex-direction: row;
-//   float: left;
-//   margin-right: 5rem;
-// }
+export const OptionForm = styled.form`
+  display: flex;
+  flex-direction: row;
+  float: left;
+  margin-right: 5rem;
+`
 
-// .select-box {
-//   position: relative;
-//   display: flex;
-//   width: auto;
-//   min-width: 250px;
-//   flex-direction: column;
-// }
+export const SelectBox = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  width: 100%;
+  max-width: 350px;
+  margin-top: 1rem;
+`
 
-// .select-box .options-container {
-//   position: absolute;
-//   z-index: 20;
-//   top: 55px;
-//   left: 0;
-//   background: $gray-light;
-//   color: $secondary;
-//   max-height: 0;
-//   width: 100%;
-//   opacity: 0;
-//   overflow: hidden;
+export const OptionContainer = styled.div`
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  left: 0;
+  background-color: $gray-dark;
+  color: #f5f6fa;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
 
-//   order: 1;
-// }
+  &.is-active{
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: #0d141f;
+    border-radius: 0 8px 8px 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #525861;
+    border-radius: 0 8px 8px 0;
+  }
+`
 
-// .select-box .options-container a {
-//   padding: 0;
-//   cursor: pointer;
-//   display: block;
-//   transition-duration: 0.3s;
-//   &:hover label{
-//     background-color: $primary;
-//     color: $white;
-//   }
-// }
 
-// .selected {
-//   background: $white;
-//   border-bottom: 1px solid $border;
-//   padding: 0 30px;
-//   color: $secondary;
-//   position: relative;
-//   text-align: left;
-//   font-size: 1.1rem;
-//   order: 0;
-//   display: table;
-//   height: 50px;
-//   cursor: pointer;
-// }
 
-// .selected.field-inline {
-//   margin: 0;
-// }
 
-// .selected span {
-//   display: table-cell;
-//   vertical-align: middle;
-//   text-align: center;
-// }
+export const.select-box label,
+export const.is-selected {
+  padding: 12px 24px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
-// .select-box .options-container.active {
-//   max-height: 240px;
-//   opacity: 1;
-//   overflow-y: scroll;
-// }
+export const.select-box .is-selected {
+  background-color: $gray-dark;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #f5f6fa;
+  position: relative;
+  order: 1px;
+  &:after {
+    content: "";
+    background: url("../../img/svg/triangle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
 
-// .selected svg.triangle {
-//   position: absolute;
-//   right: 7px;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    right: 10px;
+    top: 12px;
+    transition: all 0.4s;
+  }
+}
 
-// .select-box .options-container.active + .selected svg {
-//   transform: rotateX(180deg);
-// }
+.select-box .options--container.is-active + .select-box .is-selected::after {
+  transform: rotateX(180deg);
+  top: -6px;
+}
 
-// .select-box .options-container::-webkit-scrollbar {
-//   width: 5px;
-//   background: $gray-light;
-// }
-
-// .select-box .options-container::-webkit-scrollbar-thumb {
-//   background: $primary;
-// }
-
-// .select-box label {
-//   font-size: 0.9rem;
-//   cursor: pointer;
-//   text-align: center;
-//   display: inline-block;
-//   width: 100%;
-//   padding: 9px 0;
-//   color: $primary;
-// }
-
-// .select-box .option .radio {
-//   opacity: 0;
-//   display: none;
-// }
+.select-box .option:hover {
+  background: $gray;
+}
+.select-box .option .radio {
+  display: none;
+}

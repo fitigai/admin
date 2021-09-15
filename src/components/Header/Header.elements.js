@@ -5,6 +5,6 @@ export const HeaderPaneParams = styled.header`
   padding: 1rem;
 `
 
-export const Title_2 = styled.h2`
+export const TitleTwo = styled.h2`
   color: ${COLORS_VARIABLES.primary};
 `
