@@ -2,6 +2,7 @@ export const COLORS_VARIABLES = {
   primary: "#004EFF",
   secondary: "#B2AB8C",
   accent: "#F5F8FF",
+  accentSecondary: "#BED2FF",
   danger: "#d50000",
   success: "#00c853",
   dark: "#000000",

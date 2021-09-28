@@ -1,69 +1,88 @@
-import React, { useState } from "react"
-import { OptionForm, SelectBox, OptionContainer, FieldOptions, SvgTriangle, OptionList } from "./Option.elements"
+import React, { useState, useRef } from "react"
+import { SelectBox, SelectContainer, Selected, Option } from "./Option.elements"
+import { ChevronDownIcon } from "evergreen-ui"
 
 function OptionDropDown() {
-  // const [isActive, setIsaActive] = useState(false)
-  // const [isSelected, setIsSelected] = useState(false)
-  // const [option, setOption] = useState("-")
+  const [isActive, SetIsactive] = useState(false)
+  const [selectedOption, setSelectedOption] = useState("-")
+  const selectDropdown = useRef(false)
 
-  // // selectOption: "-",
-  // //   showSelect: false
-  // function handleOption() {
-  //   setIsaActive(true)
-  // }
-  // function handleSelection() {
-  //   setIsaActive(false)
-  // }
+  function toggleHandler(event) {
+    event.stopPropagation()
+    SetIsactive(!isActive)
 
-  // function toggleHandler(event) {
-  //   event.stopPropagation()
-  //   setIsaActive(!isActive)
+    const handler = event => {
+      if (isActive == true && selectDropdown.current.contains(event.target)) {
+        SetIsactive(!isActive)
+      }
+    }
+    document.addEventListener("mousedown", handler)
+    return () => {
+      document.removeEventListener("mousedown", handler)
+    }
+  }
 
-  //   const handler = event => {
-  //     if (isActive == true && !this.optionsRef.current.contains(event.target)) {
-  //       setIsaActive(!isActive)
-  //     }
-  //   }
-  //   document.addEventListener("mousedown", handler)
-  //   return () => {
-  //     document.removeEventListener("mousedown", handler)
-  //   }
-  // }
+  function selectOption(event) {
+    event.stopPropagation()
+    let target = event.target.children[0].value
+    if (target) {
+      SetIsactive(!isActive)
+      setSelectedOption(target)
 
-  // function onSelect(event) {
-  //   event.stopPropagation()
-  //   let target = event.target.parentNode.firstElementChild
-  //   if (target.value) {
-  //     setOption(target.name)
-  //     setIsaActive(!isActive)
-  //     this.props.products.forEach(actionFilter => {
-  //       if (actionFilter.identifier === target.value) {
-  //         this.props.filterByMerchant(actionFilter)
-  //       }
-  //     })
-  //   }
-  // }
+      // this.props.products.forEach(actionFilter => {
+      //   if (actionFilter.identifier === target.value) {
+      //     this.props.filterByMerchant(actionFilter)
+      //   }
+      // })
+    }
+  }
+
   return (
     <>
-      {/* <SelectBox>
-        <div className="is-selected" onClick={toggleHandler}>
-          {props.merchant.name ? props.merchant.name : selectOption}
-        </div>
-        <OptionContainer className={showSelect ? "is-active" : ""} ref={optionsRef}>
-          {this.props.products.map(option => {
-            return (
-              <div className="option" key={option.identifier}>
-                <input type="radio" className="radio" id={option.identifier} value={option.identifier} name={option.name} />
-                <label htmlFor={option.identifier} onClick={onSelect}>
-                  {option.name}
-                </label>
-              </div>
-            )
-          })}
-        </OptionContainer>
-      </SelectBox> */}
+      <SelectBox>
+        <Selected className={isActive ? "is-active" : ""} onClick={toggleHandler}>
+          {selectedOption}
+          <span>
+            <ChevronDownIcon></ChevronDownIcon>
+          </span>
+        </Selected>
+        <SelectContainer className={isActive ? "is-active" : ""} ref={selectDropdown}>
+          <Option onClick={selectOption}>
+            <input type="radio" id="fitness" name="fitness" value="fitness" />
+            <label htmlFor="fitness">Fitness</label>
+          </Option>
+          <Option onClick={selectOption}>
+            <input type="radio" id="running" name="running" value="running" />
+            <label htmlFor="running">Running</label>
+          </Option>
+          <Option onClick={selectOption}>
+            <input type="radio" id="yoga" name="yoga" value="yoga" />
+            <label htmlFor="yoga">Yoga</label>
+          </Option>
+          <Option onClick={selectOption}>
+            <input type="radio" id="stretching" name="stretching" value="stretching" />
+            <label htmlFor="stretching">Stretching</label>
+          </Option>
+          <Option onClick={selectOption}>
+            <input type="radio" id="crossfit" name="crossfit" value="crossfit" />
+            <label htmlFor="crossfit">Crossfit</label>
+          </Option>
+          <Option onClick={selectOption}>
+            <input type="radio" id="climbing" name="climbing" value="climbing" />
+            <label htmlFor="climbing">Climbing</label>
+          </Option>
+          <Option onClick={selectOption}>
+            <input type="radio" id="football" name="football" value="football" />
+            <label htmlFor="football">Football</label>
+          </Option>
+          <Option onClick={selectOption}>
+            <input type="radio" id="basketball" name="basketball" value="basketball" />
+            <label htmlFor="basketball">Basketball</label>
+          </Option>
+        </SelectContainer>
+      </SelectBox>
     </>
   )
 }
 
-export default OptionDropDown()
+export default OptionDropDown

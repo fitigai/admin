@@ -11,8 +11,8 @@ function App() {
       <GlobalStyle />
       <Navbar />
       <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="homepage" component={Homepage} />
+        <Route exact path="/" component={Dashboard} />
       </Switch>
     </Router>
   )
