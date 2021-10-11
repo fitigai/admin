@@ -1,38 +1,30 @@
 import React, { useState } from "react"
 import { MainHomePage, FormFloating, FormTextCenter } from "./Pages.elements"
 import FormInputField from "../components/Form/Input/FormInputField"
-import Button from "../components/Button/Button"
+import FormButton from "../components/Form/FormButton/FormButton"
 import Logo from "../components/Logo/Logo"
-import { useHistory } from "react-router-dom"
 
-function Homepage() {
-  let history = useHistory()
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+function Homepage({ Login, error }) {
   const [inputValues, setInputValues] = useState({
-    firstname: "",
+    name: "",
+    email: "",
     password: ""
   })
-  function handleSubmit(e) {
+
+  const handleSubmit = e => {
     e.preventDefault()
-    // setIsLoggedIn(true)
-    // if (isLoggedIn) {
-    history.push("/dashboard")
-    // }
+    Login(inputValues)
   }
 
   return (
     <MainHomePage imgUrl={process.env.PUBLIC_URL + "/homepage-background.jpg"}>
-      <FormFloating
-        onSubmit={() => {
-          history.push("/dashboard")
-        }}
-      >
+      <FormFloating onSubmit={handleSubmit}>
         <Logo />
         <h1>Bienvenue sur la plate-forme Fitigai Admin</h1>
         <FormTextCenter>Le futur de Fitigai se trouve ici. Faites un choix statistique en évaluant les tendances de vos utilisateurs et concevez de nouveau moyen de gestion. Créez une technologie durable afin que vos utilisateurs continuent de participer à la course de la performance.</FormTextCenter>
-        <FormInputField fieldInputTitle="Pick your username or email" formInputText={inputValues.firstname} />
+        <FormInputField fieldInputTitle="Pick your username or email" formInputText={inputValues.name} />
         <FormInputField fieldInputTitle="Pick your password" formInputText={inputValues.password} />
-        <Button apparance="primary">Sign up</Button>
+        <FormButton apparance="primary" value="Se connecter" />
       </FormFloating>
     </MainHomePage>
   )

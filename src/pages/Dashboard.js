@@ -1,7 +1,7 @@
 import React from "react"
 import AsideNav from "../components/Aside/AsideNav"
 import HeaderPane from "../components/Header/HeaderPane"
-import CardUser from "../components/Card/CardUser"
+import Carduser from "../components/Card/Carduser"
 import { DashboardPage, UserListPane, DashboardPane } from "./Pages.elements"
 
 function Dashboard() {
@@ -10,7 +10,7 @@ function Dashboard() {
       <AsideNav />
       <UserListPane>
         <HeaderPane />
-        <CardUser />
+        <Carduser />
       </UserListPane>
       <DashboardPane>
         <header>

@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import MainContainer from "../styles/MainContainer"
+// import MainContainer from "../styles/MainContainer"
 import Edit from "../components/Edit"
 import Trash from "../components/Trash"
-import Aside from "./Aside"
+// import Aside from "./Aside"
 import axios from "axios"
 import { Avatar, Pagination, Table, Spinner, Pane } from "evergreen-ui"
 import moment from "moment"
@@ -50,9 +50,10 @@ class Users extends Component {
       )
     } else {
       return (
-        <MainContainer>
-          <Aside />
+        // <MainContainer>
+        // <Aside />
 
+        <>
           <Table>
             <Table.Head>
               <Table.TextHeaderCell flexBasis={100} flexShrink={0} flexGrow={0}></Table.TextHeaderCell>
@@ -88,7 +89,8 @@ class Users extends Component {
             </Table.Body>
           </Table>
           <Pagination page={1} totalPages={5} className="table-pagination"></Pagination>
-        </MainContainer>
+        </>
+        // </MainContainer>
       )
     }
   }

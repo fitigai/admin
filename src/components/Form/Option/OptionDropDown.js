@@ -12,7 +12,7 @@ function OptionDropDown() {
     SetIsactive(!isActive)
 
     const handler = event => {
-      if (isActive == true && selectDropdown.current.contains(event.target)) {
+      if (isActive === true && selectDropdown.current.contains(event.target)) {
         SetIsactive(!isActive)
       }
     }
